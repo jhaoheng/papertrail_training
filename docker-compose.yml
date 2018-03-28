@@ -8,8 +8,8 @@ services:
     environment:
       - log_destinations=
       - port=
-      - bucket_name=
-      - config=
+      - bucket_name=papertrial
+      - config=/rsyslog/tmp.log
     entrypoint: sh -c "/usr/local/bin/remote_syslog -D --hostname $$bucket_name -p $$port -d $$log_destinations $$config"
     restart: always
     
