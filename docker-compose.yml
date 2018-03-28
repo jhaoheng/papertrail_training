@@ -1,0 +1,15 @@
+version: '3.2'
+services:
+  papertrial:
+    image: octohost/remote_syslog:latest
+    container_name: papertrial
+    volumes:
+      - ./tmp.log:/rsyslog/tmp.log
+    environment:
+      - log_destinations=
+      - port=
+      - bucket_name=
+      - config=
+    entrypoint: sh -c "/usr/local/bin/remote_syslog -D --hostname $$bucket_name -p $$port -d $$log_destinations $$config"
+    restart: always
+    
