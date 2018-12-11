@@ -1,0 +1,9 @@
+hostname: papertrail-test
+files:
+  - /var/log/fakeLog/fake_1.log
+  - /var/log/fakeLog/fake_2.log
+destination:
+  host: test9.papertrailapp.com
+  port: 50000
+  protocol: tls
+new_file_check_interval: 2 # Check every 5 seconds
